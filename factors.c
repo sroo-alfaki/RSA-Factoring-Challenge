@@ -71,10 +71,3 @@ void factorize_numbers(const char* file_path)
 
 	fclose(file);
 }
-int main()
-{
-	const char* file_path = "tests.txt"; 
-	factorize_numbers(file_path);
-
-	return 0;
-}
