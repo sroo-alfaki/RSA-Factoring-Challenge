@@ -38,3 +38,21 @@ void find_factors(int n) {
 	}
 	printf("\n");
 }
+int main()
+{
+	FILE* file = fopen("tests", "r");
+	if (file == NULL) {
+		printf("number\n");
+		return 1;
+	}
+
+	char line[100];
+	while (fgets(line, sizeof(line), file)) {
+		int n = atoi(line);
+		find_factors(n);
+	}
+
+	fclose(file);
+
+	return 0;
+}
