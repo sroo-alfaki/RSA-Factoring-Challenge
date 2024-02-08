@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>
+/**
+ * is_prime - count
+ * @n: int number
+ * Return: returns a pointer to a new string or NULL
+ */
 
 bool is_prime(int n)
 {
@@ -9,26 +14,30 @@ bool is_prime(int n)
 
 	if (n <= 1)
 	{
-		return false;
+		return (false);
 	}
 	if (n == 2)
 	{
-		return true;
+		return (true);
 	}
 	if (n % 2 == 0)
 	{
-		return false;
+		return (false);
 	}
 	for (i = 3; i <= sqrt(n); i += 2)
 	{
 		if (n % i == 0)
 		{
-			return false;
+			return (false);
 		}
 	}
-	return true;
+	return (true);
 }
-
+/**
+ * find_factors - count
+ * @n: int number
+ * Return: returns a pointer to a new string or NULL
+ */
 void find_factors(int n)
 {
 	int factors[100];
@@ -47,22 +56,27 @@ void find_factors(int n)
 	factors[count++] = n;
 
 	printf("%d = ", n);
-	for (i = 0; i < count; i++) 
+	for (i = 0; i < count; i++)
 	{
 		printf("%d ", factors[i]);
 	}
 	printf("\n");
 }
+/**
+ * factorize_numbers - count
+ * @*file_path: int number
+ * Return: returns a pointer to a new string or NULL
+ */
 
-
-void factorize_numbers(const char* file_path)
+void factorize_numbers(const char *file_path)
 {
 	int n;
 	char line[100];
 
-	FILE* file = fopen(file_path, "r");
+	FILE *file = fopen(file_path, "r");
 
-	if (file == NULL) {
+	if (file == NULL)
+	{
 		printf("error file\n");
 		return;
 	}
@@ -75,9 +89,14 @@ void factorize_numbers(const char* file_path)
 
 	fclose(file);
 }
-int main()
+/**
+ * main - count
+ *Return: returns a pointer to a new string or NULL
+ */
+int main(void)
 {
-	const char* file_path = "../tests/test00";
+	const char *file_path = ("../tests/test00");
+
 	factorize_numbers(file_path);
-	return 0;
+	return (0);
 }
